@@ -2,176 +2,134 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { GraduationCap, Users, BookOpen, Calendar, MessageSquare, Laptop } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { 
+  BookOpen, 
+  Users, 
+  BarChart3, 
+  Video, 
+  MessageSquare, 
+  Trophy,
+  GraduationCap,
+  Zap,
+  Shield,
+  Globe
+} from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      {/* Navigation */}
-      <nav className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <GraduationCap className="h-8 w-8 text-blue-600" />
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                SmartClassX
-              </span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-gray-600 hover:text-blue-600 transition-colors">Features</a>
-              <a href="#benefits" className="text-gray-600 hover:text-blue-600 transition-colors">Benefits</a>
-              <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
-              <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
-                Sign In
-              </Button>
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                Get Started
-              </Button>
-            </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900">
+      {/* Header */}
+      <header className="border-b bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="flex items-center space-x-2">
+            <GraduationCap className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+            <span className="text-2xl font-bold text-gray-900 dark:text-white">SmartClassX</span>
+          </div>
+          <nav className="hidden md:flex items-center space-x-6">
+            <a href="#features" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Features</a>
+            <a href="#pricing" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Pricing</a>
+            <a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+            <ThemeToggle />
+            <Button variant="outline" className="dark:border-gray-600">Login</Button>
+            <Button>Get Started</Button>
+          </nav>
+          <div className="md:hidden">
+            <ThemeToggle />
           </div>
         </div>
-      </nav>
+      </header>
 
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
-            <div className="lg:col-span-6">
-              <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">
-                🚀 Revolutionary LMS Platform
-              </Badge>
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-                The Future of
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  {" "}Learning
-                </span>
-                <br />
-                is Here
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                SmartClassX revolutionizes education by creating an engaging, interactive learning environment 
-                that empowers both students and teachers to achieve extraordinary results.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-8">
-                  Start Free Trial
-                </Button>
-                <Button size="lg" variant="outline" className="border-gray-300 text-lg px-8">
-                  Watch Demo
-                </Button>
-              </div>
-              <div className="mt-8 flex items-center space-x-6">
-                <div className="flex items-center space-x-2">
-                  <div className="flex -space-x-2">
-                    <div className="w-8 h-8 rounded-full bg-blue-500"></div>
-                    <div className="w-8 h-8 rounded-full bg-purple-500"></div>
-                    <div className="w-8 h-8 rounded-full bg-green-500"></div>
-                  </div>
-                  <span className="text-sm text-gray-600">10,000+ educators trust us</span>
-                </div>
-              </div>
-            </div>
-            <div className="lg:col-span-6 mt-12 lg:mt-0">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 transform rotate-6 rounded-3xl opacity-20"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                  alt="Students learning with SmartClassX"
-                  className="relative rounded-3xl shadow-2xl"
-                />
-              </div>
-            </div>
+      <section className="py-20 px-4">
+        <div className="container mx-auto text-center">
+          <Badge className="mb-4 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 border-blue-200 dark:border-blue-700">
+            🚀 Revolutionary LMS Platform
+          </Badge>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 dark:from-blue-400 dark:via-purple-400 dark:to-blue-600 bg-clip-text text-transparent">
+            SmartClassX
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+            Revolutionizing education with AI-powered learning experiences that engage students and empower teachers like never before.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="text-lg px-8 py-6">
+              Start Free Trial
+              <Zap className="ml-2 h-5 w-5" />
+            </Button>
+            <Button variant="outline" size="lg" className="text-lg px-8 py-6 dark:border-gray-600">
+              Watch Demo
+              <Video className="ml-2 h-5 w-5" />
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Features Grid */}
+      <section id="features" className="py-20 px-4 bg-white/50 dark:bg-gray-800/50">
+        <div className="container mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-purple-100 text-purple-800 hover:bg-purple-100">
-              ✨ Powerful Features
-            </Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Everything You Need for
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                {" "}Modern Education
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our comprehensive platform brings together cutting-edge technology and pedagogical excellence
-            </p>
+            <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Why Choose SmartClassX?</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">Powerful features designed for modern education</p>
           </div>
-
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2">
+            <Card className="hover:shadow-lg transition-shadow border-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <BookOpen className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Interactive Learning Modules</CardTitle>
-                <CardDescription>
-                  Engage students with multimedia content, quizzes, and hands-on activities that make learning memorable
+                <BookOpen className="h-12 w-12 text-blue-600 dark:text-blue-400 mb-4" />
+                <CardTitle className="dark:text-white">Interactive Learning</CardTitle>
+                <CardDescription className="dark:text-gray-300">
+                  Engage students with multimedia content, quizzes, and real-time collaboration tools.
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2">
+            <Card className="hover:shadow-lg transition-shadow border-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Users className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Collaborative Workspace</CardTitle>
-                <CardDescription>
-                  Foster teamwork with real-time collaboration tools, group projects, and peer-to-peer learning
+                <BarChart3 className="h-12 w-12 text-green-600 dark:text-green-400 mb-4" />
+                <CardTitle className="dark:text-white">Analytics Dashboard</CardTitle>
+                <CardDescription className="dark:text-gray-300">
+                  Track student progress with comprehensive analytics and personalized insights.
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2">
+            <Card className="hover:shadow-lg transition-shadow border-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Calendar className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Smart Scheduling</CardTitle>
-                <CardDescription>
-                  Automated scheduling with intelligent conflict resolution and seamless calendar integration
+                <Video className="h-12 w-12 text-purple-600 dark:text-purple-400 mb-4" />
+                <CardTitle className="dark:text-white">Virtual Classrooms</CardTitle>
+                <CardDescription className="dark:text-gray-300">
+                  Seamless video conferencing with interactive whiteboards and screen sharing.
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2">
+            <Card className="hover:shadow-lg transition-shadow border-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <MessageSquare className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Instant Communication</CardTitle>
-                <CardDescription>
-                  Connect students and teachers through integrated messaging, announcements, and discussion forums
+                <MessageSquare className="h-12 w-12 text-orange-600 dark:text-orange-400 mb-4" />
+                <CardTitle className="dark:text-white">Smart Communication</CardTitle>
+                <CardDescription className="dark:text-gray-300">
+                  AI-powered messaging and automated notifications keep everyone connected.
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2">
+            <Card className="hover:shadow-lg transition-shadow border-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Laptop className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Multi-Platform Access</CardTitle>
-                <CardDescription>
-                  Learn anywhere, anytime with our responsive design that works perfectly on all devices
+                <Trophy className="h-12 w-12 text-yellow-600 dark:text-yellow-400 mb-4" />
+                <CardTitle className="dark:text-white">Gamification</CardTitle>
+                <CardDescription className="dark:text-gray-300">
+                  Boost engagement with achievements, leaderboards, and reward systems.
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2">
+            <Card className="hover:shadow-lg transition-shadow border-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <GraduationCap className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-xl">Progress Analytics</CardTitle>
-                <CardDescription>
-                  Track student progress with detailed analytics and personalized learning recommendations
+                <Shield className="h-12 w-12 text-red-600 dark:text-red-400 mb-4" />
+                <CardTitle className="dark:text-white">Secure & Reliable</CardTitle>
+                <CardDescription className="dark:text-gray-300">
+                  Enterprise-grade security with 99.9% uptime guarantee and data protection.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -179,129 +137,134 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section id="benefits" className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+      {/* For Students Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">
-                👥 For Students & Teachers
+              <Badge className="mb-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 border-green-200 dark:border-green-700">
+                For Students
               </Badge>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Empowering Education for
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  {" "}Everyone
-                </span>
-              </h2>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-blue-600 font-semibold">S</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">For Students</h3>
-                    <p className="text-gray-600">
-                      Personalized learning paths, interactive content, and instant feedback help students 
-                      stay engaged and achieve better learning outcomes.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-purple-600 font-semibold">T</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">For Teachers</h3>
-                    <p className="text-gray-600">
-                      Streamlined course management, automated grading, and detailed analytics 
-                      help teachers focus on what matters most - teaching.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-green-600 font-semibold">A</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">For Administrators</h3>
-                    <p className="text-gray-600">
-                      Comprehensive reporting, user management, and scalable infrastructure 
-                      provide complete control and visibility.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <h3 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Learn at Your Own Pace</h3>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                Access personalized learning paths, interactive content, and real-time feedback to maximize your educational potential.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mr-3"></div>
+                  <span className="dark:text-gray-300">Adaptive learning algorithms</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mr-3"></div>
+                  <span className="dark:text-gray-300">Collaborative study groups</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mr-3"></div>
+                  <span className="dark:text-gray-300">Progress tracking and achievements</span>
+                </li>
+              </ul>
             </div>
+            <div className="bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 rounded-2xl p-8 h-80 flex items-center justify-center">
+              <Users className="h-32 w-32 text-blue-600 dark:text-blue-400" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="mt-12 lg:mt-0">
-              <img 
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Collaborative learning environment"
-                className="rounded-2xl shadow-2xl"
-              />
+      {/* For Teachers Section */}
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+        <div className="container mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="bg-gradient-to-br from-green-100 to-blue-100 dark:from-green-900 dark:to-blue-900 rounded-2xl p-8 h-80 flex items-center justify-center order-last lg:order-first">
+              <GraduationCap className="h-32 w-32 text-green-600 dark:text-green-400" />
+            </div>
+            <div>
+              <Badge className="mb-4 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 border-purple-200 dark:border-purple-700">
+                For Teachers
+              </Badge>
+              <h3 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Empower Your Teaching</h3>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                Create engaging content, track student progress, and streamline administrative tasks with our comprehensive teaching tools.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-green-600 dark:bg-green-400 rounded-full mr-3"></div>
+                  <span className="dark:text-gray-300">AI-powered content creation</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-green-600 dark:bg-green-400 rounded-full mr-3"></div>
+                  <span className="dark:text-gray-300">Automated grading and feedback</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-green-600 dark:bg-green-400 rounded-full mr-3"></div>
+                  <span className="dark:text-gray-300">Comprehensive analytics dashboard</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Classroom?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Join thousands of educators who are already experiencing the SmartClassX revolution
+      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700">
+        <div className="container mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6 text-white">Ready to Transform Education?</h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Join thousands of educators and students who are already experiencing the future of learning with SmartClassX.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8">
-              Start Free Trial
+            <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
+              Start Your Free Trial
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8">
-              Schedule Demo
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-blue-600">
+              Schedule a Demo
             </Button>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <footer className="py-12 px-4 bg-gray-900 dark:bg-gray-950 text-white">
+        <div className="container mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
-            <div className="md:col-span-2">
-              <div className="flex items-center space-x-2 mb-4">
-                <GraduationCap className="h-8 w-8 text-blue-400" />
-                <span className="text-2xl font-bold">SmartClassX</span>
-              </div>
-              <p className="text-gray-400 mb-4">
-                Revolutionizing education through innovative technology and engaging learning experiences.
-              </p>
-            </div>
-            
             <div>
-              <h3 className="text-lg font-semibold mb-4">Product</h3>
+              <div className="flex items-center space-x-2 mb-4">
+                <GraduationCap className="h-6 w-6 text-blue-400" />
+                <span className="text-xl font-bold">SmartClassX</span>
+              </div>
+              <p className="text-gray-400">Revolutionizing education through technology and innovation.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Product</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Integrations</a></li>
               </ul>
             </div>
-            
             <div>
-              <h3 className="text-lg font-semibold mb-4">Support</h3>
+              <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Community</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
               </ul>
             </div>
           </div>
-          
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 SmartClassX. All rights reserved.</p>
+          <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400">© 2024 SmartClassX. All rights reserved.</p>
+            <div className="flex items-center space-x-4 mt-4 md:mt-0">
+              <Globe className="h-5 w-5 text-gray-400" />
+              <span className="text-gray-400">Available worldwide</span>
+            </div>
           </div>
         </div>
       </footer>
